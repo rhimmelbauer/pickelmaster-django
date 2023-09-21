@@ -4,13 +4,13 @@ USER root
 
 RUN apk update &&\
     apk upgrade &&\
-    apk add build-base gcc musl-dev python3-dev 
+    apk add build-base gcc python3-dev linux-headers
 
 COPY requirements.txt .
 COPY pickelmaster /pickelmaster
 
 WORKDIR /pickelmaster
 
-RUN pip install -U pip pip-tools && pip-sync /requirements.txt
+RUN pip install -U pip pip-tools setuptools wheel && pip-sync /requirements.txt && pip install uwsgi
 
-CMD python manage.py runserver 0.0.0.0:8000
+CMD uwsgi --http :8000 --module pickelmaster.wsgi
