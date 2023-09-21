@@ -4,13 +4,16 @@ USER root
 
 RUN apk update &&\
     apk upgrade &&\
-    apk add build-base gcc python3-dev linux-headers
+    apk add build-base gcc python3-dev linux-headers nginx
 
 COPY requirements.txt .
 COPY pickelmaster /pickelmaster
+COPY nginx.conf /etc/nginx/sites-available/pickelmaster.conf
+
+RUN ln -s /etc/nginx/sites-available/pickelmaster.conf /etc/nginx/sites-enabled/
 
 WORKDIR /pickelmaster
 
 RUN pip install -U pip pip-tools setuptools wheel && pip-sync /requirements.txt && pip install uwsgi
 
-CMD uwsgi --http :8000 --module pickelmaster.wsgi
+CMD uwsgi --socket pickelmaster.sock --module pickelmaster.wsgi
