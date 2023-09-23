@@ -4,13 +4,10 @@ USER root
 
 RUN apk update &&\
     apk upgrade &&\
-    apk add build-base gcc python3-dev linux-headers nginx
+    apk add build-base gcc python3-dev linux-headers nginx openrc
 
 COPY requirements.txt .
 COPY pickelmaster /pickelmaster
-COPY nginx.conf /etc/nginx/sites-available/pickelmaster.conf
-
-RUN ln -s /etc/nginx/sites-available/pickelmaster.conf /etc/nginx/sites-enabled/
 
 WORKDIR /pickelmaster
 
