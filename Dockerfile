@@ -4,13 +4,16 @@ USER root
 
 RUN apk update &&\
     apk upgrade &&\
-    apk add build-base gcc python3-dev linux-headers nginx openrc
+    apk add build-base gcc python3-dev linux-headers
 
 COPY requirements.txt .
 COPY pickelmaster /pickelmaster
+COPY pickelmaster_uwsgi.ini .
+
+RUN mkdir vassals && ln -s /pickelmaster_uwsgi.ini /vassals
 
 WORKDIR /pickelmaster
 
 RUN pip install -U pip pip-tools setuptools wheel && pip-sync /requirements.txt && pip install uwsgi
 
-CMD uwsgi --socket pickelmaster.sock --module pickelmaster.wsgi
+CMD uwsgi --emperor /vassals
