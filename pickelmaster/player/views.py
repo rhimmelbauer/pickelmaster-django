@@ -1,6 +1,10 @@
 from player.models import PlayerModel
-from django.views.generic import DetailView, ListView
+from django.views.generic import DetailView, ListView, TemplateView
+
  
+class HomeView(TemplateView):
+    template_name = 'home.html'
+
 
 class PlayerListView(ListView):
     template_name = 'players.html'
@@ -8,6 +12,7 @@ class PlayerListView(ListView):
 
     def get_queryset(self):
         return PlayerModel.objects.all()
+
 
 class PlayerModelDetailView(DetailView):
     model = PlayerModel
