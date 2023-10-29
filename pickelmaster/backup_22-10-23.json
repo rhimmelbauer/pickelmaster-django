@@ -1,0 +1,1697 @@
+[
+{
+    "model": "player.playermodel",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$YQImxSp6dX8mGg4reXz0sX$9BARUP5HkeFO0xxnM9ehUUIUmweYMl2Miaq0ofVHZXA=",
+        "last_login": "2023-10-21T14:27:20.901Z",
+        "is_superuser": true,
+        "username": "rob",
+        "first_name": "",
+        "last_name": "",
+        "email": "rob@mail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2023-10-13T23:46:49.642Z",
+        "aka": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "player.playermodel",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$btfxECqKDecK6mKXACBmDX$1GppPYaYbtJQGifA5Z+Qxu8DGyD2v2/V8GJGXY3aYnQ=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Ander",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-10-14T00:42:17.666Z",
+        "aka": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "player.playermodel",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$yc1cjmTi4njiOGL0diW2as$9LfAxJtrl4uAtF80pvxFKFgpwMH7bVF6J7VOlyNjiyY=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Pepe",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-10-14T00:42:26.490Z",
+        "aka": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "player.playermodel",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$qpUKhbp7qk0Jsaup9cYGwv$uuXmkJA1Gu85O/pneq2cJZTzClyARZ55lcm8TH/xWNU=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Agustin",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-10-14T00:42:34.900Z",
+        "aka": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "player.playermodel",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$MxcuT67mNmFaWa5eVaSXA3$fvE/JuGKIjxnckdjMzAsrM5T5hk55owGrOzHpKTrark=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Sergio",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-10-14T00:42:42.823Z",
+        "aka": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "player.playermodel",
+    "pk": 6,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$CoMzXpN7vqQBVPODJlqYRS$N9pVIycvqIM/iTOLhWZYecA2OhJibJ2iPSxaPQXIfP8=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Humbi",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-10-14T00:42:50.093Z",
+        "aka": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "player.playermodel",
+    "pk": 7,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$Zl3xonby5pOY5RXJ4vSq6G$iX2tdOc3NZCMWQit6I9nXm86eTva1cXaLE9XHP8EWXU=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Eduardo",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-10-14T00:43:02.625Z",
+        "aka": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "player.playermodel",
+    "pk": 8,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$nU4kkFaX0Kw10zRY7tyosP$ubSjjKlVVnUqtA7f/DhiuqmyxhizxHdOAqUXRDP38EY=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Ricardo",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-10-14T00:43:10.505Z",
+        "aka": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "player.playermodel",
+    "pk": 9,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$o2yT9y3zM3csxTgUC93MTG$EgBigMtOJVK9DXnmbz9EhUctH/HWRPO5SbmQpzI+3cQ=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Daniel",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-10-14T00:43:18Z",
+        "aka": "Plato con Frutas",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "player.playermodel",
+    "pk": 10,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$eKDMjqL0wnXlCtOGVqGCe2$qW3xiiem99aPlPVqYSE5a+8v1N3EnXTKruJaDksMA9Y=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Omar",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-10-14T00:43:42.342Z",
+        "aka": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "match.sessionmodel",
+    "pk": 1,
+    "fields": {
+        "date": "2023-09-02",
+        "location": "Playa Vista",
+        "awards": "na"
+    }
+},
+{
+    "model": "match.sessionmodel",
+    "pk": 2,
+    "fields": {
+        "date": "2023-09-16",
+        "location": "Playa Vista",
+        "awards": "na"
+    }
+},
+{
+    "model": "match.sessionmodel",
+    "pk": 3,
+    "fields": {
+        "date": "2023-09-30",
+        "location": "Casa Goldberg",
+        "awards": "na"
+    }
+},
+{
+    "model": "match.sessionmodel",
+    "pk": 4,
+    "fields": {
+        "date": "2023-09-23",
+        "location": "Playa Vista",
+        "awards": "null"
+    }
+},
+{
+    "model": "match.sessionmodel",
+    "pk": 5,
+    "fields": {
+        "date": "2023-09-30",
+        "location": "Playa Vista",
+        "awards": "null"
+    }
+},
+{
+    "model": "match.sessionmodel",
+    "pk": 6,
+    "fields": {
+        "date": "2023-10-07",
+        "location": "Playa Vista",
+        "awards": "sajkdf"
+    }
+},
+{
+    "model": "match.sessionmodel",
+    "pk": 7,
+    "fields": {
+        "date": "2023-10-14",
+        "location": "Playa Vista",
+        "awards": {
+            "Point_Of_Day": "Guti"
+        }
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 1,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 8,
+        "winners": [
+            2,
+            10
+        ],
+        "losers": [
+            1,
+            5
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 2,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 7,
+        "winners": [
+            3,
+            4
+        ],
+        "losers": [
+            6,
+            10
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 3,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 9,
+        "winners": [
+            2,
+            3
+        ],
+        "losers": [
+            1,
+            5
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 4,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 4,
+        "winners": [
+            4,
+            6
+        ],
+        "losers": [
+            1,
+            10
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 5,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 6,
+        "winners": [
+            4,
+            6
+        ],
+        "losers": [
+            2,
+            3
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 6,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 9,
+        "winners": [
+            2,
+            10
+        ],
+        "losers": [
+            1,
+            3
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 7,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 3,
+        "winners": [
+            3,
+            10
+        ],
+        "losers": [
+            4,
+            6
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 8,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 5,
+        "winners": [
+            5,
+            9
+        ],
+        "losers": [
+            1,
+            3
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 9,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 6,
+        "winners": [
+            2,
+            4
+        ],
+        "losers": [
+            5,
+            9
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 10,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 7,
+        "winners": [
+            2,
+            4
+        ],
+        "losers": [
+            1,
+            3
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 11,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 4,
+        "winners": [
+            3,
+            9
+        ],
+        "losers": [
+            1,
+            5
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 12,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 4,
+        "winners": [
+            4,
+            9
+        ],
+        "losers": [
+            2,
+            5
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 13,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 3,
+        "winners": [
+            3,
+            4
+        ],
+        "losers": [
+            1,
+            2
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 14,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 8,
+        "winners": [
+            3,
+            5
+        ],
+        "losers": [
+            1,
+            4
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 15,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 8,
+        "winners": [
+            7,
+            8
+        ],
+        "losers": [
+            1,
+            9
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 16,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 8,
+        "winners": [
+            7,
+            8
+        ],
+        "losers": [
+            1,
+            9
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 17,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 3,
+        "winners": [
+            1,
+            8
+        ],
+        "losers": [
+            7,
+            9
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 18,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 4,
+        "winners": [
+            1,
+            8
+        ],
+        "losers": [
+            7,
+            9
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 19,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 7,
+        "winners": [
+            7,
+            9
+        ],
+        "losers": [
+            1,
+            8
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 20,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 6,
+        "winners": [
+            7,
+            9
+        ],
+        "losers": [
+            1,
+            8
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 21,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 4,
+        "winners": [
+            3,
+            4
+        ],
+        "losers": [
+            5,
+            9
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 22,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 6,
+        "winners": [
+            5,
+            6
+        ],
+        "losers": [
+            3,
+            4
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 23,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 6,
+        "winners": [
+            3,
+            9
+        ],
+        "losers": [
+            5,
+            6
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 24,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 9,
+        "winners": [
+            4,
+            6
+        ],
+        "losers": [
+            3,
+            9
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 25,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 4,
+        "winners": [
+            5,
+            6
+        ],
+        "losers": [
+            2,
+            4
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 26,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 7,
+        "winners": [
+            5,
+            6
+        ],
+        "losers": [
+            2,
+            3
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 27,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 8,
+        "winners": [
+            3,
+            4
+        ],
+        "losers": [
+            5,
+            6
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 28,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 2,
+        "winners": [
+            2,
+            6
+        ],
+        "losers": [
+            3,
+            4
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 29,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 7,
+        "winners": [
+            2,
+            5
+        ],
+        "losers": [
+            3,
+            4
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 30,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 7,
+        "winners": [
+            2,
+            4
+        ],
+        "losers": [
+            7,
+            9
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 31,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 8,
+        "winners": [
+            2,
+            4
+        ],
+        "losers": [
+            3,
+            5
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 32,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 8,
+        "winners": [
+            7,
+            9
+        ],
+        "losers": [
+            3,
+            5
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 33,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 7,
+        "winners": [
+            4,
+            9
+        ],
+        "losers": [
+            2,
+            7
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 34,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 1,
+        "winners": [
+            2,
+            3
+        ],
+        "losers": [
+            5,
+            10
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 35,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 4,
+        "winners": [
+            4,
+            9
+        ],
+        "losers": [
+            3,
+            9
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 36,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 8,
+        "winners": [
+            4,
+            10
+        ],
+        "losers": [
+            2,
+            5
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 37,
+    "fields": {
+        "winner_score": 12,
+        "losers_score": 10,
+        "winners": [
+            2,
+            9
+        ],
+        "losers": [
+            3,
+            7
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 38,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 6,
+        "winners": [
+            4,
+            5
+        ],
+        "losers": [
+            7,
+            10
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 39,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 4,
+        "winners": [
+            1,
+            3
+        ],
+        "losers": [
+            6,
+            7
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 40,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 4,
+        "winners": [
+            2,
+            4
+        ],
+        "losers": [
+            3,
+            10
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 41,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 3,
+        "winners": [
+            1,
+            6
+        ],
+        "losers": [
+            4,
+            7
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 42,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 8,
+        "winners": [
+            4,
+            7
+        ],
+        "losers": [
+            1,
+            3
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 43,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 5,
+        "winners": [
+            2,
+            3
+        ],
+        "losers": [
+            6,
+            10
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 44,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 0,
+        "winners": [
+            2,
+            6
+        ],
+        "losers": [
+            7,
+            10
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 45,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 9,
+        "winners": [
+            2,
+            3
+        ],
+        "losers": [
+            1,
+            4
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 46,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 3,
+        "winners": [
+            3,
+            6
+        ],
+        "losers": [
+            4,
+            7
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 47,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 3,
+        "winners": [
+            2,
+            3
+        ],
+        "losers": [
+            1,
+            4
+        ]
+    }
+},
+{
+    "model": "match.resultmodel",
+    "pk": 48,
+    "fields": {
+        "winner_score": 11,
+        "losers_score": 9,
+        "winners": [
+            1,
+            6
+        ],
+        "losers": [
+            2,
+            7
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 1,
+    "fields": {
+        "result": 1,
+        "session": 1,
+        "players": [
+            1,
+            2,
+            5,
+            10
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 2,
+    "fields": {
+        "result": 2,
+        "session": 1,
+        "players": [
+            3,
+            4,
+            6,
+            10
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 3,
+    "fields": {
+        "result": 3,
+        "session": 1,
+        "players": [
+            1,
+            2,
+            3,
+            5
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 4,
+    "fields": {
+        "result": 4,
+        "session": 1,
+        "players": [
+            1,
+            4,
+            6,
+            10
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 5,
+    "fields": {
+        "result": 5,
+        "session": 1,
+        "players": [
+            2,
+            3,
+            4,
+            6
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 6,
+    "fields": {
+        "result": 6,
+        "session": 1,
+        "players": [
+            1,
+            2,
+            3,
+            10
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 7,
+    "fields": {
+        "result": 7,
+        "session": 1,
+        "players": [
+            3,
+            4,
+            6,
+            10
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 8,
+    "fields": {
+        "result": 8,
+        "session": 2,
+        "players": [
+            1,
+            3,
+            5,
+            9
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 9,
+    "fields": {
+        "result": 9,
+        "session": 2,
+        "players": [
+            2,
+            4,
+            5,
+            9
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 10,
+    "fields": {
+        "result": 10,
+        "session": 2,
+        "players": [
+            1,
+            2,
+            3,
+            4
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 11,
+    "fields": {
+        "result": 11,
+        "session": 2,
+        "players": [
+            1,
+            3,
+            5,
+            9
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 12,
+    "fields": {
+        "result": 12,
+        "session": 2,
+        "players": [
+            2,
+            4,
+            5,
+            9
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 13,
+    "fields": {
+        "result": 13,
+        "session": 2,
+        "players": [
+            1,
+            2,
+            3,
+            4
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 14,
+    "fields": {
+        "result": 14,
+        "session": 2,
+        "players": [
+            1,
+            3,
+            4,
+            5
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 15,
+    "fields": {
+        "result": 15,
+        "session": 3,
+        "players": [
+            1,
+            7,
+            8,
+            9
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 16,
+    "fields": {
+        "result": 16,
+        "session": 3,
+        "players": [
+            1,
+            7,
+            8,
+            9
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 17,
+    "fields": {
+        "result": 17,
+        "session": 3,
+        "players": [
+            1,
+            7,
+            8,
+            9
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 18,
+    "fields": {
+        "result": 18,
+        "session": 3,
+        "players": [
+            1,
+            7,
+            8,
+            9
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 19,
+    "fields": {
+        "result": 19,
+        "session": 3,
+        "players": [
+            1,
+            7,
+            8,
+            9
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 20,
+    "fields": {
+        "result": 20,
+        "session": 3,
+        "players": [
+            1,
+            7,
+            8,
+            9
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 21,
+    "fields": {
+        "result": 21,
+        "session": 4,
+        "players": [
+            3,
+            4,
+            5,
+            9
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 22,
+    "fields": {
+        "result": 22,
+        "session": 4,
+        "players": [
+            3,
+            4,
+            5,
+            6
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 23,
+    "fields": {
+        "result": 23,
+        "session": 4,
+        "players": [
+            3,
+            5,
+            6,
+            9
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 24,
+    "fields": {
+        "result": 24,
+        "session": 4,
+        "players": [
+            3,
+            4,
+            6,
+            9
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 25,
+    "fields": {
+        "result": 25,
+        "session": 5,
+        "players": [
+            2,
+            4,
+            5,
+            6
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 26,
+    "fields": {
+        "result": 26,
+        "session": 5,
+        "players": [
+            2,
+            3,
+            5,
+            6
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 27,
+    "fields": {
+        "result": 27,
+        "session": 5,
+        "players": [
+            3,
+            4,
+            5,
+            6
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 28,
+    "fields": {
+        "result": 28,
+        "session": 5,
+        "players": [
+            2,
+            3,
+            4,
+            6
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 29,
+    "fields": {
+        "result": 29,
+        "session": 5,
+        "players": [
+            2,
+            3,
+            4,
+            5
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 30,
+    "fields": {
+        "result": 30,
+        "session": 6,
+        "players": [
+            2,
+            4,
+            7,
+            9
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 31,
+    "fields": {
+        "result": 31,
+        "session": 6,
+        "players": [
+            2,
+            3,
+            4,
+            5
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 32,
+    "fields": {
+        "result": 32,
+        "session": 6,
+        "players": [
+            3,
+            5,
+            7,
+            9
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 33,
+    "fields": {
+        "result": 33,
+        "session": 6,
+        "players": [
+            2,
+            4,
+            7,
+            9
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 34,
+    "fields": {
+        "result": 34,
+        "session": 6,
+        "players": [
+            2,
+            3,
+            5,
+            10
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 35,
+    "fields": {
+        "result": 35,
+        "session": 6,
+        "players": [
+            3,
+            4,
+            7,
+            9
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 36,
+    "fields": {
+        "result": 36,
+        "session": 6,
+        "players": [
+            2,
+            4,
+            5,
+            10
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 37,
+    "fields": {
+        "result": 37,
+        "session": 6,
+        "players": [
+            2,
+            3,
+            7,
+            9
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 38,
+    "fields": {
+        "result": 38,
+        "session": 6,
+        "players": [
+            5,
+            7,
+            9,
+            10
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 39,
+    "fields": {
+        "result": 39,
+        "session": 7,
+        "players": [
+            1,
+            3,
+            6,
+            7
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 40,
+    "fields": {
+        "result": 40,
+        "session": 7,
+        "players": [
+            2,
+            3,
+            4,
+            10
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 41,
+    "fields": {
+        "result": 41,
+        "session": 7,
+        "players": [
+            1,
+            4,
+            6,
+            7
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 42,
+    "fields": {
+        "result": 42,
+        "session": 7,
+        "players": [
+            1,
+            3,
+            4,
+            7
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 43,
+    "fields": {
+        "result": 43,
+        "session": 7,
+        "players": [
+            2,
+            3,
+            6,
+            10
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 44,
+    "fields": {
+        "result": 44,
+        "session": 7,
+        "players": [
+            2,
+            6,
+            7,
+            10
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 45,
+    "fields": {
+        "result": 45,
+        "session": 7,
+        "players": [
+            1,
+            2,
+            3,
+            4
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 46,
+    "fields": {
+        "result": 46,
+        "session": 7,
+        "players": [
+            3,
+            4,
+            6,
+            7
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 47,
+    "fields": {
+        "result": 47,
+        "session": 7,
+        "players": [
+            1,
+            2,
+            3,
+            4
+        ]
+    }
+},
+{
+    "model": "match.matchmodel",
+    "pk": 48,
+    "fields": {
+        "result": 48,
+        "session": 7,
+        "players": [
+            1,
+            2,
+            6,
+            7
+        ]
+    }
+}
+]
