@@ -1,0 +1,20 @@
+{% load i18n %}
+
+<h1 class="mb-4">{% trans "Logout Confirmation" %}</h1>
+
+<p>{% trans "You are about to log out. Please confirm." %}</p>
+
+<form method="post" action="{% url 'account_logout' %}">
+    {% csrf_token %}
+    {% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+    {% endif %}
+        <button type="submit" class="btn btn-primary my-3 me-3">{% trans 'Log Out' %}</button>
+    <a {% if cancel_url %} href="{{ cancel_url }}" {% else %} href="{% url 'home' %}" {% endif %} class="d-inline-block">
+        {% if cancel_url %}
+        {% trans "Go to my accounts" %}
+        {% else %}
+        {% trans "Go to my dashboard" %}
+        {% endif %}
+    </a>
+</form>
