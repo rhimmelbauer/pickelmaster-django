@@ -8,6 +8,4 @@ from player import views
 
 urlpatterns = [
     path('players/', views.PlayerListView.as_view(), name='players'),
-    path('sessions/', views.SessionListView.as_view(), name='players')
-
 ]
