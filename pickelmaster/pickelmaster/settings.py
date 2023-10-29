@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "crispy_forms",
+    "active_link",
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
@@ -87,6 +89,8 @@ DATABASES = {
 }
 
 AUTH_USER_MODEL = "player.PlayerModel"
+
+LOGIN_REDIRECT_URL = "/players/"
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
