@@ -10,6 +10,9 @@ class PlayerModel(AbstractUser):
 
     objects = UserManager()
 
+    class Meta:
+        ordering = ["username"]
+
     def get_matches_count(self):
         return self.players.count()
     

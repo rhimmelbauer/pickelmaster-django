@@ -1,24 +1,23 @@
 {% extends "base.html" %}
-
-
 {% block content %}
-<div class="row">
-    <div class="h1">Match</div>
-</div>
-<div class="row">
-    <a href="{% url 'match-create' %}">Create Match</a>
-</div>
-<div class="row">
-    <div class="col border bold">Result</div>
-    <div class="col border bold">Players</div>
-    <div class="col border bold">Session</div>
-</div>
-{% for match in object_list %}
-<div class="row">
-    <div class="col border">{{ match.result }}</div>
-    <div class="col border">{{ match.players.all }}</div>
-    <div class="col border">{{ match.session }}</div>
-</div>
-{% endfor %}
+    <div class="row">
+        <div class="h1">Match</div>
+    </div>
+    <div class="row">
+        <a href="{% url 'match-create' %}">Create Match</a>
+    </div>
+    <div class="row">
+        <div class="col border bold">Result</div>
+        <div class="col border bold">Players</div>
+        <div class="col border bold">Session</div>
+    </div>
+    {% for match in object_list %}
+        <div class="row">
+            <div class="col border">{{ match.result }}</div>
+            <div class="col border">
+                {% for player in match.players.all %}{{ player.username }},{% endfor %}
+            </div>
+            <div class="col border">{{ match.session }}</div>
+        </div>
+    {% endfor %}
 {% endblock %}
-

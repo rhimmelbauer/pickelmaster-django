@@ -33,8 +33,10 @@ class ResultModel(models.Model):
     winner_score = models.IntegerField()
     losers_score = models.IntegerField()
 
-    # def __str__(self) -> str:
-    #     return self.result if self.result else self.pk
+    def __str__(self) -> str:
+        winners = [ player.username for player in self.winners.all()]
+        losers = [ player.username for player in self.losers.all()]
+        return f"Winners: {winners} - Losers: {losers}"
 
 
 class MatchModel(models.Model):

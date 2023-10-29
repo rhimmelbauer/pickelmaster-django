@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "crispy_forms",
+    "crispy_bootstrap5",
     "active_link",
     "allauth",
     "allauth.account",
@@ -77,6 +78,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'pickelmaster.wsgi.application'
 
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
