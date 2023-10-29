@@ -7,6 +7,9 @@ class SessionModel(models.Model):
     location = models.CharField(verbose_name="Locations", max_length=100)
     awards = models.JSONField()
 
+    def __str__(self):
+        return f"{self.date}"
+
     def get_total_matches(self):
         return self.match.count()
     
@@ -30,8 +33,15 @@ class ResultModel(models.Model):
     winner_score = models.IntegerField()
     losers_score = models.IntegerField()
 
+    # def __str__(self) -> str:
+    #     return self.result if self.result else self.pk
+
 
 class MatchModel(models.Model):
     result = models.ForeignKey(ResultModel, related_name="result", verbose_name="Result", blank=True, null=True, on_delete=models.CASCADE)
     players = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='players', verbose_name="Match Players", blank=True)
     session = models.ForeignKey(SessionModel, related_name="match", verbose_name="Session", blank=True, null=True, on_delete=models.CASCADE)
+
+    def __str__(self):
+        players = [player.username for player in self.players.all()]
+        return f"{self.session} - {players}" if self.session else self.pk
