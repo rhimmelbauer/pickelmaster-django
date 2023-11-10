@@ -4,23 +4,71 @@
 {% block content %}
 <div class="row">
     <div class="h1">Session</div>
+    <div class="h4">{{ object.date }} - {{ object.location }}</div>
 </div>
+<!-- <div class="h5">Players</div>
+<ul>
+    {% for player in object.get_session_players %}
+        <li>{{player.username}}</li>
+    {% endfor %}
+</ul> -->
+
+<div class="h5">Ranking</div>
 <div class="row">
     <div class="col border bold">Name</div>
     <div class="col border bold">Matches</div>
     <div class="col border bold">Wins</div>
     <div class="col border bold">Lost</div>
-    <div class="col border bold">Winning Percent</div>
+    <div class="col border bold">Win Ration</div>
+    <div class="col border bold">Point Scored</div>
 </div>
-{% for player in object_list %}
+
+{% for player_result in object.get_ranking.values %}
 <div class="row">
-    <div class="col border">{{ player.date }}</div>
-    <div class="col border">{{ player.location }}</div>
-    <div class="col border">{{ player.get_wins_count }}</div>
-    <div class="col border">{{ player.get_lose_count }}</div>
-    <div class="col border">{{ player.get_winning_percent|floatformat:2 }}%</div>
-    
-    
+    <div class="col border">{{player_result.name}}</div>
+    <div class="col border">{{player_result.match_count}}</div>
+    <div class="col border">{{player_result.wins}}</div>
+    <div class="col border">{{player_result.lost}}</div>
+    <div class="col border">{{player_result.ratio|floatformat:2}}%</div>
+    <div class="col border">{{player_result.total_points}}</div>
+</div>
+{% endfor %}
+<p></p>
+<div class="h5">Matches</div>
+<div class="row">
+    <div class="col border bold">Match PK</div>
+    <div class="col border bold">Match</div>
+    <div class="col border bold">Players</div>
+    <div class="col border bold">Winners</div>
+    <div class="col border bold">Losers</div>
+    <div class="col border bold">Result</div>
+</div>
+{% for match in object.match.all %}
+<div class="row">
+    <div class="col border">{{ match.pk }}</div>
+    <div class="col border">{{ forloop.counter }}</div>
+    <div class="col border">
+        <ul>
+        {% for player in match.players.all %}
+        <li>{{ player.username }}</li>    
+        {% endfor %}
+        </ul>
+    </div>
+    <div class="col border">
+        <ul>
+        {% for player in match.result.winners.all %}
+        <li>{{ player.username }}</li>    
+        {% endfor %}
+        </ul>
+    </div>
+    <div class="col border">
+        <ul>
+        {% for player in match.result.losers.all %}
+        <li>{{ player.username }}</li>    
+        {% endfor %}
+        </ul>
+    </div>
+    <div class="col border">{{ match.result.winner_score }} - {{ match.result.losers_score}}</div>
 </div>
 {% endfor %}
 {% endblock %}

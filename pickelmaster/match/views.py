@@ -1,6 +1,7 @@
+from typing import Any
 from django.shortcuts import render, redirect
 from django.urls import reverse
-from django.views.generic import CreateView, ListView, TemplateView
+from django.views.generic import CreateView, ListView, TemplateView, DetailView
 from django.views.generic.edit import FormMixin
 from match.models import SessionModel, MatchModel
 from match.forms import MatchForm, ResultForm
@@ -12,6 +13,20 @@ class SessionListView(ListView):
 
     def get_queryset(self):
         return SessionModel.objects.all()
+
+
+class SessionSummaryView(DetailView):
+    template_name = 'session_summary.html'
+    model = SessionModel
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+
+
+
+
+        return context
 
 
 class SessionCreateView(CreateView):
