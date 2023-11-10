@@ -14,13 +14,11 @@
 </div>
 {% for session in object_list %}
 <div class="row">
-    <div class="col border">{{ session.date }}</div>
+    <div class="col border"><a href="{% url 'session-summary' session.pk%}">{{ session.date }}</a></div>
     <div class="col border">{{ session.location }}</div>
     <div class="col border">{{ session.get_total_matches }}</div>
     <div class="col border">{{ session.get_total_points }}</div>
     <div class="col border">{{ session.get_winning_percent|floatformat:2 }}%</div>
-    
-    
 </div>
 {% endfor %}
 {% endblock %}
