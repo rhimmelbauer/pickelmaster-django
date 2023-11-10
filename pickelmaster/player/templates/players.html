@@ -11,7 +11,7 @@
 </div>
 {% for player in object_list %}
 <div class="row">
-    <div class="col border">{{ player.username }}</div>
+    <div class="col border"><a href="{% url 'player' player.pk %}">{{ player.username }}</a></div>
     <div class="col border">{{ player.get_matches_count }}</div>
     <div class="col border">{{ player.get_wins_count }}</div>
     <div class="col border">{{ player.get_lose_count }}</div>

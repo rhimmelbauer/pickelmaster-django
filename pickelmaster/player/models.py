@@ -4,9 +4,13 @@ from django.contrib.auth.models import AbstractUser, UserManager
 from django.db import models
 
 
+def user_profile_image_path(instance, filename):
+    return f"profile/{filename}"
+
+
 class PlayerModel(AbstractUser):
     aka = models.CharField(verbose_name="AKA", max_length=80)
-    # avatar = models.ImageField(upload_to=user_profile_avatar_path, blank=True) 
+    avatar = models.ImageField(upload_to=user_profile_image_path, blank=True)
 
     objects = UserManager()
 
@@ -23,4 +27,5 @@ class PlayerModel(AbstractUser):
         return self.losers.count()
     
     def get_winning_percent(self):
-        return (self.winners.count() / self.players.count()) * 100
+        if self.players.count():
+            return (self.winners.count() / self.players.count()) * 100
