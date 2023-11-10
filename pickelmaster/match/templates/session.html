@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="card">
+        <div class="card-header">Session</div>
+        <div class="card-body">
+            <form method="post">
+                {% csrf_token %}
+                {{ form|crispy:"bootstrap5" }}
+                <button class="btn btn-md btn-success" type="submit">Save</button>
+                <a class="btn btn-md btn-danger" href="{% url 'sessions' %}">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script><script>
+    $(document).ready(function () {
+        $(".datepicker").datepicker();
+    });
+</script>
+{% endblock %}
