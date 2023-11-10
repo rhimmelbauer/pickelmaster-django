@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from player.models import PlayerModel
 
 
 class SessionModel(models.Model):
@@ -8,7 +9,16 @@ class SessionModel(models.Model):
     awards = models.JSONField()
 
     def __str__(self):
-        return f"{self.date}"
+        return f"pk: {self.pk} - date: {self.date}"
+    
+    def players(self):
+        players = {}
+        for match in self.match.all():
+            for player in match.players.all():
+
+                players[player.pk] = player
+
+        return players.values()
 
     def get_total_matches(self):
         return self.match.count()
@@ -17,15 +27,25 @@ class SessionModel(models.Model):
         return sum([match.result.winner_score + match.result.losers_score for match in self.match.all()])
     
     def get_ranking(self):
-        sessin_ranking = {}
+        players = self.players()
+        session_ranking = {player.username: {'name': player.username, 'match_count': 0, 'wins': 0, 'lost': 0, 'ratio': '', 'total_points': 0} for player in players}
+
         for match in self.match.all():
-            for winner in match.winners.all():
-                if winner not in sessin_ranking:
-                    sessin_ranking[winner.usrename] = 0
-                sessin_ranking[winner.username] += 1
+            for player in match.players.all():
+                session_ranking[player.username]['match_count'] += 1
 
-        return sessin_ranking
+                if player in match.result.winners.all():
+                    session_ranking[player.username]['wins'] += 1
+                    session_ranking[player.username]['total_points'] += match.result.winner_score
+                
+                if player in match.result.losers.all():
+                    session_ranking[player.username]['lost'] += 1
+                    session_ranking[player.username]['total_points'] += match.result.losers_score
 
+        for player_ranking in session_ranking.values():
+            player_ranking['ratio'] = (player_ranking['wins'] / player_ranking['match_count']) * 100
+
+        return session_ranking
 
 class ResultModel(models.Model):
     winners = models.ManyToManyField(settings.AUTH_USER_MODEL, verbose_name="Winners", related_name="winners", blank=True)
@@ -36,7 +56,7 @@ class ResultModel(models.Model):
     def __str__(self) -> str:
         winners = [ player.username for player in self.winners.all()]
         losers = [ player.username for player in self.losers.all()]
-        return f"Winners: {winners} - Losers: {losers}"
+        return f"pk: {self.pk} - Winners: {winners} - Losers: {losers}"
 
 
 class MatchModel(models.Model):
@@ -46,4 +66,4 @@ class MatchModel(models.Model):
 
     def __str__(self):
         players = [player.username for player in self.players.all()]
-        return f"{self.session} - {players}" if self.session else self.pk
+        return f"pk: {self.pk} - session: {self.session} - players: {players}" if self.session else self.pk
