@@ -10,11 +10,18 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
+import environ
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+env = environ.Env(
+    DEBUG=(bool, True),
+    ALLOWED_HOSTS=(list, ["*"]),
+    GS_BUCKET_NAME=(str, "")
+    STATIC_URL=(str, "static/")
+)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -23,13 +30,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-qk4230c4tydi=%@e7&ngdqt^e9@2dsq7l=8$8u4)jg*0esq)$u'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ["*"]
-
+ALLOWED_HOSTS = env("ALLOWED_HOSTS")
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -127,8 +132,14 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
+GS_BUCKET_NAME = env("GS_BUCKET_NAME")
 
-STATIC_URL = 'static/'
+if GS_BUCKET_NAME:
+    DEFAULT_FILE_STORAGE = "storages.backends.gcloud.GoogleCloudStorage"
+    STATICFILES_STORAGE = "storages.backends.gcloud.GoogleCloudStorage"
+    GS_DEFAULT_ACL = "publicRead"
+
+STATIC_URL = env("STATIC_URL")
 STATIC_ROOT = os.path.join(BASE_DIR, "static_root/")
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static/"),

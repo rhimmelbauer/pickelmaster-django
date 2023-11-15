@@ -30,6 +30,13 @@ dependencies = [
     "django-environ",
     "django-crispy-forms",
     "iso4217",
+    "crispy-bootstrap5",
+    "toml",
+    "dj-database-url",
+    "django-active-link",
+    "django-autoslug",
+    "django-environ",
+    "Pillow",
 ]
 
 [project.optional-dependencies]
@@ -40,12 +47,7 @@ dev = [
     "mypy",
     "bandit",
     "isort",
-    "dj-database-url",
     "psycopg2-binary",
-    "django-crispy-forms",
-    "django-site-configs",
-    "django-integrations",
-    "django-allauth",
     "toml",
 ]
 docs= [

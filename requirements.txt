@@ -12,22 +12,32 @@ cffi==1.16.0
     # via cryptography
 charset-normalizer==3.3.0
     # via requests
+crispy-bootstrap5==2023.10
+    # via pickelmaster-django (pyproject.toml)
 cryptography==41.0.4
     # via pyjwt
 defusedxml==0.7.1
     # via python3-openid
+dj-database-url==2.1.0
+    # via pickelmaster-django (pyproject.toml)
 django==4.2.6
     # via
+    #   crispy-bootstrap5
+    #   dj-database-url
     #   django-allauth
     #   django-crispy-forms
     #   django-extensions
     #   pickelmaster-django (pyproject.toml)
+django-active-link==0.1.8
+    # via pickelmaster-django (pyproject.toml)
 django-allauth==0.57.0
     # via pickelmaster-django (pyproject.toml)
 django-autoslug==1.9.9
     # via pickelmaster-django (pyproject.toml)
 django-crispy-forms==2.0
-    # via pickelmaster-django (pyproject.toml)
+    # via
+    #   crispy-bootstrap5
+    #   pickelmaster-django (pyproject.toml)
 django-environ==0.11.2
     # via pickelmaster-django (pyproject.toml)
 django-extensions==3.2.3
@@ -38,6 +48,8 @@ iso4217==1.11.20220401
     # via pickelmaster-django (pyproject.toml)
 oauthlib==3.2.2
     # via requests-oauthlib
+pillow==10.1.0
+    # via pickelmaster-django (pyproject.toml)
 pycparser==2.21
     # via cffi
 pyjwt[crypto]==2.8.0
@@ -52,7 +64,11 @@ requests-oauthlib==1.3.1
     # via django-allauth
 sqlparse==0.4.4
     # via django
+toml==0.10.2
+    # via pickelmaster-django (pyproject.toml)
 typing-extensions==4.8.0
-    # via asgiref
+    # via
+    #   asgiref
+    #   dj-database-url
 urllib3==2.0.6
     # via requests
