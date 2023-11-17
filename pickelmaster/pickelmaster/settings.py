@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 env = environ.Env(
     DEBUG=(bool, True),
     ALLOWED_HOSTS=(list, ["*"]),
-    GS_BUCKET_NAME=(str, "")
+    GS_BUCKET_NAME=(str, ""),
     STATIC_URL=(str, "static/")
 )
 

@@ -6,6 +6,15 @@
     <div class="h1">Session</div>
     <div class="h4">{{ object.date }} - {{ object.location }}</div>
 </div>
+
+<div class="row">
+    <h1>Players</h1>
+    {% for player in object.players %}
+        {% if player.avatar %}
+        <img class="rounded-circle" style="width: 80px;" src="{{ player.avatar.url }}" >    
+        {% endif %}
+    {% endfor %}
+</div>
 <!-- <div class="h5">Players</div>
 <ul>
     {% for player in object.get_session_players %}
@@ -13,7 +22,7 @@
     {% endfor %}
 </ul> -->
 
-<div class="h5">Ranking</div>
+<div class="h5">Stats</div>
 <div class="row">
     <div class="col border bold">Name</div>
     <div class="col border bold">Matches</div>
