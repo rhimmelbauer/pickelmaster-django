@@ -9,8 +9,9 @@ def user_profile_image_path(instance, filename):
 
 
 class PlayerModel(AbstractUser):
-    aka = models.CharField(verbose_name="AKA", max_length=80)
+    aka = models.CharField(verbose_name="AKA", max_length=80, blank=True, null=True)
     avatar = models.ImageField(upload_to=user_profile_image_path, blank=True)
+    active = models.BooleanField(default=True)
 
     objects = UserManager()
 

@@ -6,7 +6,7 @@ from player.models import PlayerModel
 class SessionModel(models.Model):
     date = models.DateField()
     location = models.CharField(verbose_name="Locations", max_length=100)
-    awards = models.JSONField()
+    awards = models.JSONField(default=dict, blank=True, null=True)
 
     def __str__(self):
         return f"pk: {self.pk} - date: {self.date}"
