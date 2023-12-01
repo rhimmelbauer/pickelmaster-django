@@ -12,8 +12,8 @@ class MatchForm(forms.ModelForm):
 
 
 class ResultForm(forms.ModelForm):
-    winners = forms.ModelMultipleChoiceField(queryset=PlayerModel.objects.filter(active=True))
-    losers = forms.ModelMultipleChoiceField(queryset=PlayerModel.objects.filter(active=True))
+    winners = forms.ModelMultipleChoiceField(queryset=PlayerModel.objects.filter(is_active=True))
+    losers = forms.ModelMultipleChoiceField(queryset=PlayerModel.objects.filter(is_active=True))
 
     class Meta:
         model = ResultModel
