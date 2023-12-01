@@ -9,12 +9,19 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import os
+import environ
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+env = environ.Env(
+    DEBUG=(bool, True),
+    ALLOWED_HOSTS=(list, ["*"]),
+    GS_BUCKET_NAME=(str, ""),
+    STATIC_URL=(str, "static/")
+)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -23,13 +30,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-qk4230c4tydi=%@e7&ngdqt^e9@2dsq7l=8$8u4)jg*0esq)$u'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ["localhost"]
-
+ALLOWED_HOSTS = env("ALLOWED_HOSTS")
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,6 +42,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "crispy_forms",
+    "crispy_bootstrap5",
+    "active_link",
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
+    "match",
+    "player"
 ]
 
 MIDDLEWARE = [
@@ -47,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'pickelmaster.urls'
@@ -54,7 +68,7 @@ ROOT_URLCONF = 'pickelmaster.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        "DIRS": [os.path.join(BASE_DIR, "templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -69,6 +83,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'pickelmaster.wsgi.application'
 
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
@@ -80,6 +95,9 @@ DATABASES = {
     }
 }
 
+AUTH_USER_MODEL = "player.PlayerModel"
+
+LOGIN_REDIRECT_URL = "/players/"
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -114,10 +132,26 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
+GS_BUCKET_NAME = env("GS_BUCKET_NAME")
 
-STATIC_URL = 'static/'
+if GS_BUCKET_NAME:
+    DEFAULT_FILE_STORAGE = "storages.backends.gcloud.GoogleCloudStorage"
+    STATICFILES_STORAGE = "storages.backends.gcloud.GoogleCloudStorage"
+    GS_DEFAULT_ACL = "publicRead"
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
+STATIC_URL = env("STATIC_URL")
+# STATIC_ROOT = os.path.join(BASE_DIR, "static_root/")
+STATICFILES_DIRS = [
+   os.path.join(BASE_DIR, "static/"),
+]
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
+MEDIA_URL = "/media/"
+
+
+FILE_UPLOAD_HANDLERS = [
+    "django.core.files.uploadhandler.TemporaryFileUploadHandler",
+]

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="row">
+    <div class="h1">Match</div>
+    <form method="post">
+        {% csrf_token %}
+        <h3>Result</h3>
+        {{ result_form|crispy:"bootstrap5" }}
+        <h3>Match</h3>
+        {{ match_form|crispy:"bootstrap5"}}
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
+{% endblock %}
+

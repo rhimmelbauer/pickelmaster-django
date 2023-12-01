@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<h1>Player</h1>
+<div class="row">
+    <div class="card">
+        <div class="card-header">
+            <div class="d-flex flex-row">
+                {% if form.instance and form.instance.avatar.url %}
+                <img class="rounded-circle" style="width: 150px;" src="{{ form.instance.avatar.url }}" >    
+                {% endif %}
+                <div class="d-flex flex-column justify-content-end mx-3">
+                    <div>Total Matches: {{form.instance.get_matches_count}}</div>
+                    <div>Winning Percent: {{form.instance.get_winning_percent|floatformat:2}}</div>
+                    <div>Ranking: TBD</div>
+                    <h1>{{ form.instance.username }}</h1>
+                </div>
+            </div>
+        </div>
+        <div class="card-border">
+            <form enctype="multipart/form-data" method="post">
+                {% csrf_token %}
+                {{ form|crispy:"bootstrap5"}}
+            <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

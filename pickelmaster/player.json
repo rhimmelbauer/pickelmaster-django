@@ -1,0 +1,192 @@
+[
+{
+    "model": "player.playermodel",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$YQImxSp6dX8mGg4reXz0sX$9BARUP5HkeFO0xxnM9ehUUIUmweYMl2Miaq0ofVHZXA=",
+        "last_login": "2023-10-13T23:46:59.954Z",
+        "is_superuser": true,
+        "username": "rob",
+        "first_name": "",
+        "last_name": "",
+        "email": "rob@mail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2023-10-13T23:46:49.642Z",
+        "aka": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "player.playermodel",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$btfxECqKDecK6mKXACBmDX$1GppPYaYbtJQGifA5Z+Qxu8DGyD2v2/V8GJGXY3aYnQ=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Ander",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-10-14T00:42:17.666Z",
+        "aka": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "player.playermodel",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$yc1cjmTi4njiOGL0diW2as$9LfAxJtrl4uAtF80pvxFKFgpwMH7bVF6J7VOlyNjiyY=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Pepe",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-10-14T00:42:26.490Z",
+        "aka": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "player.playermodel",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$qpUKhbp7qk0Jsaup9cYGwv$uuXmkJA1Gu85O/pneq2cJZTzClyARZ55lcm8TH/xWNU=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Agustin",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-10-14T00:42:34.900Z",
+        "aka": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "player.playermodel",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$MxcuT67mNmFaWa5eVaSXA3$fvE/JuGKIjxnckdjMzAsrM5T5hk55owGrOzHpKTrark=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Sergio",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-10-14T00:42:42.823Z",
+        "aka": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "player.playermodel",
+    "pk": 6,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$CoMzXpN7vqQBVPODJlqYRS$N9pVIycvqIM/iTOLhWZYecA2OhJibJ2iPSxaPQXIfP8=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Humbi",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-10-14T00:42:50.093Z",
+        "aka": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "player.playermodel",
+    "pk": 7,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$Zl3xonby5pOY5RXJ4vSq6G$iX2tdOc3NZCMWQit6I9nXm86eTva1cXaLE9XHP8EWXU=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Eduardo",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-10-14T00:43:02.625Z",
+        "aka": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "player.playermodel",
+    "pk": 8,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$nU4kkFaX0Kw10zRY7tyosP$ubSjjKlVVnUqtA7f/DhiuqmyxhizxHdOAqUXRDP38EY=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Ricardo",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-10-14T00:43:10.505Z",
+        "aka": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "player.playermodel",
+    "pk": 9,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$o2yT9y3zM3csxTgUC93MTG$EgBigMtOJVK9DXnmbz9EhUctH/HWRPO5SbmQpzI+3cQ=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "David",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-10-14T00:43:18.900Z",
+        "aka": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "player.playermodel",
+    "pk": 10,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$eKDMjqL0wnXlCtOGVqGCe2$qW3xiiem99aPlPVqYSE5a+8v1N3EnXTKruJaDksMA9Y=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Omar",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-10-14T00:43:42.342Z",
+        "aka": "",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]

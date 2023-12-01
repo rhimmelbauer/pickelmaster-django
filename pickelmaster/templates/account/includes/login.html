@@ -1,0 +1,121 @@
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% if password_reset %}
+<h2 class="mb-4">{% trans "Reset Your Password" %}</h2>
+<p>{% trans 'Your password has been reset.' %}</p>
+{% endif %}
+
+<h1 class="mb-3 text-uppercase">{% trans "Login" %}</h1>
+{% if login_confirmed %}
+<strong class="text-success">
+    {% blocktrans %}Thank you for confirming your signup. You may log in now.{% endblocktrans %}
+</strong>
+{% elif signup_status == signup_choices.OPEN_TO_NEW_USERS and not password_reset %}
+<p>
+    {% trans "Don't have an account?" %}
+    <a href="{{ signup_url }}">{% blocktrans %}Sign up{% endblocktrans %}</a>
+</p>
+{% endif %}
+
+{% if sso_enabled %}
+    <p>{% blocktrans with provider_name=sso_enabled.name %}Login with your "{{ provider_name }}" account{% endblocktrans %}</p>
+    <a id="sso_login" href="{% url 'saml2_login' %}" class="btn btn-primary me-3"><strong>{% trans "Log In" %}</strong></a>
+{% else %}
+<form novalidate class="login needs-validation m-0" id="login_form" method="post">
+    {% csrf_token %}
+    {% if form.non_field_errors %}
+    <div class="text-danger my-3">
+        {% trans "The username or password you entered is incorrect. Please try again." %}
+    </div>
+    {% endif %}
+    <div id="div_{{ form.login.id_for_label }}" class="form-group mb-3 mt-3">
+        <label for="{{ form.login.id_for_label }}" class="form-check-label">
+            Username
+        </label>
+        <input id="{{ form.login.id_for_label }}" type="email" name="{{form.login.name}}" class="form-control"
+            placeholder="{% trans 'Enter your email' %}">
+        {% if form.errors %}
+        {% for field in form %}
+        {% for error in field.errors %}
+        <div class="text-danger my-3">
+            {{ error }}
+        </div>
+        {% endfor %}
+        {% endfor %}
+        {% endif %}
+    </div>
+    <div id="div_{{ form.password.id_for_label }}" class="form-group">
+        <label for="{{ form.password.id_for_label }}" class="form-check-label">
+            {{ form.password.label }}
+        </label>
+        <div class="input-group flex-nowrap align-items-center">
+            <input type="password" name="{{form.password.name}}" class="form-control"
+                placeholder="{% trans 'Enter your password' %}" id="{{ form.password.id_for_label }}">
+            <div id="pw_icon" class="d-block" onclick="reveal()">
+                <iconify-icon data-icon="ic:baseline-remove-red-eye" class="text-primary inline-icon"></iconify-icon>
+            </div>
+        </div>
+    </div>
+    <div id="div_{{ form.remember.id_for_label }}" class="form-check my-4 ps-0">
+        <label for="{{ form.remember.id_for_label }}" class="form-check-label">
+            {{ form.remember }}
+            {{ form.remember.label | safe }}
+        </label>
+
+    </div>
+    {% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+    {% endif %}
+    <button type="submit" id="submit" class="btn btn-primary disabled me-3" disabled>
+        <strong>
+            {% trans "Log In" %}
+        </strong>
+    </button>
+    <small>
+        <a class="button secondaryAction mt-3 d-inline-block" href="{% url 'account_reset_password' %}">
+            {% trans "Forgot Password?" %}
+        </a>
+    </small>
+</form>
+{% endif %}
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+    function reveal() {
+        var passwordEl = document.getElementById('{{ form.password.id_for_label }}')
+        if (passwordEl.type == 'password') {
+            passwordEl.type = 'text';
+            $('#pw_icon').html('<iconify-icon data-icon="mdi:eye-off" class="text-primary inline-icon"></iconify-icon>');
+        } else {
+            passwordEl.type = 'password';
+            $('#pw_icon').html('<iconify-icon data-icon="ic:baseline-remove-red-eye" class="text-primary inline-icon"></iconify-icon>');
+        }
+    }
+    {% comment %}
+    disable button while fields are empty
+    {% endcomment %}
+    function toggle_button_state() {
+        var empty = false;
+        $('#login_form input.form-control').each(function () {
+            if ($.trim($(this).val())== '') {
+                empty = true;
+            }
+        });
+
+        if (empty) {
+            $('#submit').prop('disabled', true);
+            $('#submit').addClass('disabled');
+        } else {
+            $('#submit').removeAttr('disabled');
+            $('#submit').removeClass('disabled');
+        }
+    }
+
+    $(document).ready(function () {
+        toggle_button_state();
+        $('#login_form input.form-control').on('input', function () {
+            toggle_button_state();
+        });
+    });
+</script>
