@@ -30,7 +30,7 @@ dependencies = [
     "django-environ",
     "django-crispy-forms",
     "iso4217",
-    "crispy-bootstrap5",
+    "crispy_bootstrap5",
     "toml",
     "dj-database-url",
     "django-active-link",
