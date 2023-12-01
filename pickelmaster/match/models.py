@@ -47,6 +47,7 @@ class SessionModel(models.Model):
 
         return session_ranking
 
+
 class ResultModel(models.Model):
     winners = models.ManyToManyField(settings.AUTH_USER_MODEL, verbose_name="Winners", related_name="winners", blank=True)
     losers = models.ManyToManyField(settings.AUTH_USER_MODEL, verbose_name="Lossers", related_name="losers", blank=True)
@@ -54,8 +55,8 @@ class ResultModel(models.Model):
     losers_score = models.IntegerField()
 
     def __str__(self) -> str:
-        winners = [ player.username for player in self.winners.all()]
-        losers = [ player.username for player in self.losers.all()]
+        winners = [player.username for player in self.winners.all()]
+        losers = [player.username for player in self.losers.all()]
         return f"pk: {self.pk} - Winners: {winners} - Losers: {losers}"
 
 
