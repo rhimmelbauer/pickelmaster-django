@@ -7,7 +7,7 @@ from django.views.generic.detail import SingleObjectMixin
 from django.views.generic.edit import FormMixin
 from match.models import SessionModel, MatchModel
 from match.forms import MatchForm, ResultForm, SessionForm
-
+from django.contrib.auth.mixins import PermissionRequiredMixin
 
 class SessionListView(ListView):
     template_name = 'sessions.html'
