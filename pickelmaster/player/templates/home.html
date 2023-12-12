@@ -1,19 +1,26 @@
 {% extends "base.html" %}
+{% load render_table from django_tables2 %}
 {% load static %}
 {% block content %}
-<div class="container px-lg-5">
-    <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
-        <div class="m-4 m-lg-5">
-            <img src="{% static 'img/ad-logo.png'%}" alt="" srcset="">
-            <p class="fs-4 mt-5">
+    <div class="row text-center">
+        <div class="col-md-3 col-sm-1"></div>
+        <div class="col">
+            <img src="{% static 'img/ad-logo.png' %}"
+                 alt=""
+                 srcset=""
+                 style="width: 50%">
+            <p class="">
                 Welcome to Alpha Dink, where passion meets the paddle! We are a vibrant community bonded by our love for Pickleball, where rallies echo with laughter and every match is a chance to forge new friendships. Join us on the court for spirited games and a shared enthusiasm for this exhilarating sport!
             </p>
         </div>
+        <div class="col-md-3 col-sm-1"></div>
     </div>
     <div class="row">
         <div class="col-md-3 col-sm-1"></div>
-        <div class="col">
-            <h4>Last 10 Games Winning Ration</h4>
+        <div class="col text-center">
+            <h4>Last 13 Games Winning Ration</h4>
+            {% render_table table %}
+            {% comment %}
             <table class="table table-responsive table-striped text-center">
                 <thead>
                     <tr>
@@ -23,16 +30,15 @@
                 </thead>
                 <tbody>
                     {% for player in players %}
-                        <tr>
-                            <td>{{player.username}}</td>
-                            <td>{{player.get_last_ten_winning_percent|floatformat:2}}</td>
-                        </tr>
+                    <tr>
+                        <td>{{ player.username }}</td>
+                        <td>{{ player.get_last_ten_winning_percent|floatformat:2 }}</td>
+                    </tr>
                     {% endfor %}
                 </tbody>
             </table>
+            {% endcomment %}
         </div>
         <div class="col-md-3 col-sm-1"></div>
     </div>
-</div>
 {% endblock %}
-

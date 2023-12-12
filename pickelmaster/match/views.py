@@ -7,6 +7,7 @@ from match.models import SessionModel, MatchModel
 from match.forms import MatchForm, ResultForm, SessionForm
 from match.tables import MatchTable, SessionSummeryTable
 
+
 class SessionListView(ListView):
     template_name = 'sessions.html'
     model = SessionModel
