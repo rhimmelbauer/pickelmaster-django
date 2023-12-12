@@ -45,7 +45,7 @@ class SessionModel(models.Model):
         for player_ranking in session_ranking.values():
             player_ranking['ratio'] = (player_ranking['wins'] / player_ranking['match_count']) * 100
 
-        return session_ranking
+        return list(session_ranking.values())
 
 
 class ResultModel(models.Model):
