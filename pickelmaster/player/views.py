@@ -21,7 +21,7 @@ class HomeView(TemplateView):
 
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        context['table'] = PlayerXWinningCountTable(self.get_table_data(PlayerModel.objects.all()))
+        context['table'] = PlayerXWinningCountTable(self.get_table_data(PlayerModel.objects.filter(is_active=True)))
 
         return context
 
@@ -39,7 +39,7 @@ class PlayerListView(SingleTableView):
                 'wins': player.get_wins_count(),
                 'lost': player.get_lose_count(),
                 'ratio': player.get_winning_percent(),
-            } for player in PlayerModel.objects.all()
+            } for player in PlayerModel.objects.filter(is_active=True)
         ]
 
 
