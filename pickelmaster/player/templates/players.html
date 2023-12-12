@@ -1,7 +1,17 @@
 {% extends "base.html" %}
-
+{% load render_table from django_tables2 %}
 
 {% block content %}
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col">
+        <h3>Players:</h3>
+        {% render_table table %}
+    </div>
+    <div class="col-md-2"></div>
+</div>
+{% comment %}
+
 <div class="row">
     <div class="col border bold">Name</div>
     <div class="col border bold">Matches</div>
@@ -18,5 +28,6 @@
     <div class="col border">{{ player.get_winning_percent|floatformat:2 }}%</div>
 </div>
 {% endfor %}
+{% endcomment %}
 {% endblock %}
 

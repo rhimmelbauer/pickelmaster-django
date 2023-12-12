@@ -10,6 +10,29 @@
             </p>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-3 col-sm-1"></div>
+        <div class="col">
+            <h4>Last 10 Games Winning Ration</h4>
+            <table class="table table-responsive table-striped text-center">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Winning Percent</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for player in players %}
+                        <tr>
+                            <td>{{player.username}}</td>
+                            <td>{{player.get_last_ten_winning_percent|floatformat:2}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-3 col-sm-1"></div>
+    </div>
 </div>
 {% endblock %}
 
