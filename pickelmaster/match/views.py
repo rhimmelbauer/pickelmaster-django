@@ -1,13 +1,12 @@
-from typing import Any
-from django.http import HttpResponse
+from django_tables2 import SingleTableView
 from django.shortcuts import render, redirect
 from django.urls import reverse, reverse_lazy
-from django.views.generic import CreateView, ListView, TemplateView, DetailView, FormView, View
+from django.views.generic import ListView, TemplateView, DetailView, FormView, View
 from django.views.generic.detail import SingleObjectMixin
-from django.views.generic.edit import FormMixin
 from match.models import SessionModel, MatchModel
 from match.forms import MatchForm, ResultForm, SessionForm
-from django.contrib.auth.mixins import PermissionRequiredMixin
+from match.tables import MatchTable, SessionSummeryTable
+
 
 class SessionListView(ListView):
     template_name = 'sessions.html'
@@ -56,12 +55,15 @@ class SessionSummaryView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['session_table'] = SessionSummeryTable(self.object.get_ranking())
+        context['matches_table'] = MatchTable(self.object.match.all())
         return context
 
 
-class MatchListView(ListView):
+class MatchListView(SingleTableView):
     template_name = "matchs.html"
     model = MatchModel
+    table_class = MatchTable
 
 
 class MatchCreateView(TemplateView):
@@ -91,8 +93,8 @@ class MatchCreateView(TemplateView):
         match.save()
         match.players.add(*[player for player in result.winners.all()])
         match.players.add(*[player for player in result.losers.all()])
-
         return redirect(reverse('matches'))
+
 
 
 class SessionMatchCreateView(TemplateView):
@@ -123,4 +125,4 @@ class SessionMatchCreateView(TemplateView):
         match.players.add(*[player for player in result.winners.all()])
         match.players.add(*[player for player in result.losers.all()])
 
-        return redirect(reverse('matches'))
+        return redirect(reverse('session-summary', kwargs={"pk": kwargs['pk']}))

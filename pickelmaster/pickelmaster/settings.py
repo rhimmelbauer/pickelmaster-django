@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     "allauth.account",
     "allauth.socialaccount",
     "match",
-    "player"
+    "player",
+    "django_tables2"
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,62 @@
+{% extends 'django_tables2/bootstrap5.html' %}
+{% load django_tables2 %}
+{% load i18n %}
+
+{% block table-wrapper %}
+<div class="table-container table-responsive">
+    {% block table %}
+        {{ block.super }}
+    {% endblock table %}
+
+    {% block pagination %}
+        {% if table.page and table.paginator.num_pages > 1 %}
+        <nav aria-label="Table navigation" class="row justify-content-between align-items-center mx-0">
+            <div class="col pagination-showing small px-0">
+                {% blocktrans  with start=table.page.start_index end=table.page.end_index count total=table.rows|length %}Showing {{ start }} of {{ total }} entry.{% plural %}Showing {{ start }} to {{ end }} of {{ total }} entries.{% endblocktrans %}
+            </div>
+            <div>
+                <ul class="col pagination justify-content-center px-0">
+                {% if table.page.has_previous %}
+                    {% block pagination.previous %}
+                    <li class="previous page-item">
+                        <a href="{% querystring table.prefixed_page_field=table.page.previous_page_number %}" class="page-link" aria-label="{% trans 'previous' %}">
+                            <span aria-hidden="true">&lt;</span>
+                            <span class="sr-only">{% trans 'previous' %}</span>
+                        </a>
+                    </li>
+                    {% endblock pagination.previous %}
+                {% endif %}
+                {% if table.page.has_previous or table.page.has_next %}
+                {% block pagination.range %}
+                {% for p in table.page|table_page_range:table.paginator %}
+                    <li class="page-item{% if table.page.number == p %} active{% endif %}">
+                        <a class="page-link" {% if p != '...' %}href="{% querystring table.prefixed_page_field=p %}"{% endif %}>
+                            {{ p }}
+                        </a>
+                    </li>
+                {% endfor %}
+                {% endblock pagination.range %}
+                {% endif %}
+                {% if table.page.has_next %}
+                    {% block pagination.next %}
+                    <li class="next page-item">
+                        <a href="{% querystring table.prefixed_page_field=table.page.next_page_number %}" class="page-link" aria-label="{% trans 'next' %}">
+                            <span aria-hidden="true">&gt;</span>
+                            <span class="sr-only">{% trans 'next' %}</span>
+                        </a>
+                    </li>
+                    {% endblock pagination.next %}
+                {% endif %}
+                </ul>
+            </div>
+        </nav>
+        {% else %}
+        <nav aria-label="Table navigation" class="pb-3">
+            <div class="pagination-showing small">
+                {% blocktrans  with start=table.page.start_index end=table.page.end_index count total=table.rows|length %}Showing {{ start }} of {{ total }} entry.{% plural %}Showing {{ start }} to {{ end }} of {{ total }} entries.{% endblocktrans %}
+            </div>
+        </nav>
+        {% endif %}
+    {% endblock pagination %}
+</div>
+{% endblock table-wrapper %}

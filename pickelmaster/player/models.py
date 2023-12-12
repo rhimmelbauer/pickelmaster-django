@@ -29,4 +29,9 @@ class PlayerModel(AbstractUser):
     def get_winning_percent(self):
         if self.players.count():
             return (self.winners.count() / self.players.count()) * 100
-# 
+
+    def get_last_x_winning_percent(self, x=13):
+        matches = self.players.all().order_by('-session__date')[:x]
+        wins = sum([1 for match in matches if self in match.result.winners.all()])
+
+        return (wins / x) * 100
