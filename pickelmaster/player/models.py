@@ -38,31 +38,47 @@ class PlayerModel(AbstractUser):
     
     def get_best_partners(self):
         winners = []
+        winner_counter = []
 
         for match in self.players.all():
             for winner in match.result.winners.all():
-                if winner != self:
+                if winner != self and winner.username:
                     winners.append(winner.username)
         
-        winner_counter = {}
-        for winner in winners:
-            if winner not in winner_counter:
-                winner_counter[winner] = winners.count(winner)
+        for winner in set(winners):
+            wins = winners.count(winner)
+            matchs = len([match for match in self.players.all() for player in match.players.all() if player.username == winner])
+            winner_counter.append(
+                {
+                    'name': winner,
+                    'count': wins,
+                    'matches': matchs,
+                    'ratio': (wins / matchs) * 100
+                }
+            )
                 
         return winner_counter
 
     def get_worst_partners(self):
-        lose = []
+        losing_players = []
+        lose_counter = []
 
         for match in self.players.all():
-            for lost in match.result.losers.all():
-                if lost != self:
-                    lose.append(lost.username)
+            for loser in match.result.losers.all():
+                if loser != self and loser.username:
+                    losing_players.append(loser.username)
         
-        lose_counter = {}
-        for lost in lose:
-            if lost not in lose_counter:
-                lose_counter[lost] = lose.count(lost)
+        for loser in set(losing_players):
+            lost_count = losing_players.count(loser)
+            matchs = len([match for match in self.players.all() for player in match.players.all() if player.username == loser])
+            lose_counter.append(
+                {
+                    'name': loser,
+                    'count': lost_count,
+                    'matches': matchs,
+                    'ratio': (lost_count / matchs) * 100
+                }
+            )
                 
         return lose_counter
 
