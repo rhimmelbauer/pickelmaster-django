@@ -52,24 +52,6 @@ class PlayerDetailView(UpdateView):
     model = PlayerModel
     queryset = PlayerModel.objects.all()
 
-    # def process_table_values(self, data):
-    #     winner_stats = self.object.get_best_partners()
-    #     loser_stats = self.object.get_worst_partners()
-    #     table_data = []
-
-    #     players = list(winner_stats.keys() | loser_stats.keys())
-
-    #     for player in players:
-    #         table_data.append(
-    #             {
-    #                 "name": player,
-    #                 "win_counter": winner_stats.get(player, 0),
-    #                 "lose_counter": loser_stats.get(player, 0)
-    #             }
-    #         )
-
-    #     return table_data
-
     def process_table_values(self, data):
         table_data = []
 
