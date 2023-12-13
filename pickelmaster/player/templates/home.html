@@ -20,24 +20,6 @@
         <div class="col text-center">
             <h4>Last 13 Games Winning Ration</h4>
             {% render_table table %}
-            {% comment %}
-            <table class="table table-responsive table-striped text-center">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Winning Percent</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for player in players %}
-                    <tr>
-                        <td>{{ player.username }}</td>
-                        <td>{{ player.get_last_ten_winning_percent|floatformat:2 }}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-            {% endcomment %}
         </div>
         <div class="col-md-3 col-sm-1"></div>
     </div>
