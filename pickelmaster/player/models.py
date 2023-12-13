@@ -35,3 +35,37 @@ class PlayerModel(AbstractUser):
         wins = sum([1 for match in matches if self in match.result.winners.all()])
 
         return (wins / x) * 100
+    
+    def get_best_partners(self):
+        winners = []
+
+        for match in self.players.all():
+            for winner in match.result.winners.all():
+                if winner != self:
+                    winners.append(winner.username)
+        
+        winner_counter = {}
+        for winner in winners:
+            if winner not in winner_counter:
+                winner_counter[winner] = winners.count(winner)
+                
+        return winner_counter
+
+    def get_worst_partners(self):
+        lose = []
+
+        for match in self.players.all():
+            for lost in match.result.losers.all():
+                if lost != self:
+                    lose.append(lost.username)
+        
+        lose_counter = {}
+        for lost in lose:
+            if lost not in lose_counter:
+                lose_counter[lost] = lose.count(lost)
+                
+        return lose_counter
+
+    def get_nemesis(self):
+        ...
+

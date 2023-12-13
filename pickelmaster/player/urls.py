@@ -8,5 +8,5 @@ from player import views
 
 urlpatterns = [
     path('players/', views.PlayerListView.as_view(), name='players'),
-    path('player/<int:pk>', views.PlayerDetailView.as_view(), name='player')
+    path('player/<str:username>', views.PlayerDetailView.as_view(), name='player')
 ]
