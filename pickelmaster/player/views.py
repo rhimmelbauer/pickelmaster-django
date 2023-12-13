@@ -24,7 +24,6 @@ class HomeView(TemplateView):
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
         context['table'] = PlayerXWinningCountTable(self.get_table_data(PlayerModel.objects.all()))
-        context['players'] = PlayerModel.objects.all()
 
         return context
 
