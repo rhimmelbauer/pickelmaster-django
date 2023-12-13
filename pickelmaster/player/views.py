@@ -69,9 +69,15 @@ class PlayerDetailView(UpdateView):
     
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
+
+        wins_table = PartnerLoseOrWinCounterTable(self.object.get_best_partners())
+        # wins_table.columns['counter'].verbose_name = "Wins"
+
+        lose_table = PartnerLoseOrWinCounterTable(self.object.get_worst_partners())
+        # lose_table.columns['counter'].verbose_name = "Lost"
         
-        context['partner_win_table'] = PartnerLoseOrWinCounterTable(self.process_table_values(self.object.get_best_partners()))
-        context['partner_lose_table'] = PartnerLoseOrWinCounterTable(self.process_table_values(self.object.get_worst_partners()))
+        context['partner_win_table'] = wins_table
+        context['partner_lose_table'] = lose_table
 
         return context
 
