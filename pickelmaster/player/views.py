@@ -7,7 +7,7 @@ from django_tables2.views import SingleTableView
 from django.shortcuts import redirect
 from django.views.generic.edit import UpdateView
 from player.forms import PlayerForm
-from player.tables import PlayerTable, PlayerXWinningCountTable, PartnerLoseOrWinCounterTable
+from player.tables import PlayerTable, PlayerXWinningCountTable, PartnerWinsAndLostsTable
 
 
 class HomeView(TemplateView):
@@ -70,14 +70,14 @@ class PlayerDetailView(UpdateView):
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
 
-        wins_table = PartnerLoseOrWinCounterTable(self.object.get_best_partners())
+        wins_table = PartnerWinsAndLostsTable(self.object.get_partner_ratios())
         # wins_table.columns['counter'].verbose_name = "Wins"
 
-        lose_table = PartnerLoseOrWinCounterTable(self.object.get_worst_partners())
+        # lose_table = PartnerWinsAndLostsTable(self.object.get_worst_partners())
         # lose_table.columns['counter'].verbose_name = "Lost"
         
         context['partner_win_table'] = wins_table
-        context['partner_lose_table'] = lose_table
+        # context['partner_lose_table'] = lose_table
 
         return context
 

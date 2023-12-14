@@ -37,13 +37,16 @@
     <div class="row mt-5">
         <div class="col-md-1"></div>
         <div class="col">
-            <h3>Partner Wins Table</h3>
+            <h3>Partner Stats Table</h3>
             {% render_table partner_win_table %}
         </div>
         <div class="col-1"></div>
         <div class="col">
+            {% comment %}
+            
             <h3>Partner Lost Table</h3>
             {% render_table partner_lose_table %}
+            {% endcomment %}
         </div>
         <div class="col-md-1"></div>
     </div>

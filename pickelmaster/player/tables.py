@@ -44,15 +44,16 @@ class PlayerXWinningCountTable(tables.Table):
         )
 
 
-class PartnerLoseOrWinCounterTable(tables.Table):
+class PartnerWinsAndLostsTable(tables.Table):
     name = tables.Column(verbose_name="Name", orderable=False)
-    count = tables.Column(verbose_name="Count", orderable=True)
+    wins = tables.Column(verbose_name="Wins", orderable=False)
+    losts = tables.Column(verbose_name="Lost", orderable=False)
     matches = tables.Column(verbose_name="Matches")
     ratio = tables.Column(verbose_name="Percentage")
     
     class Meta:
         template_name = "includes/custom_dt2_bootstrap4.html"
-        fields = ("name", "count", 'matches', 'ratio')
+        fields = ("name", "wins", 'losts', 'matches', 'ratio')
         order_by = ['-ratio']
     
     def render_name(self, value):
